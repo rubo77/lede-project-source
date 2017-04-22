@@ -254,20 +254,13 @@ platform_nand_pre_upgrade() {
 	esac
 }
 
-platform_pre_upgrade() {
+platform_do_upgrade() {
 	local board=$(ramips_board_name)
 
 	case "$board" in
     	ubnt-erx)
 		nand_do_upgrade "$ARGV"
 		;;
-	esac
-}
-
-platform_do_upgrade() {
-	local board=$(ramips_board_name)
-
-	case "$board" in
 	*)
 		default_do_upgrade "$ARGV"
 		;;

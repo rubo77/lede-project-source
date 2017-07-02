@@ -91,6 +91,8 @@ ifdef CONFIG_BUSYBOX_DEFAULT_NSLOOKUP_LEDE
   endif
 endif
 
+TARGET_CFLAGS += -g
+
 define Build/Compile
 	+$(MAKE) $(PKG_JOBS) -C $(PKG_BUILD_DIR) \
 		CC="$(TARGET_CC)" \
